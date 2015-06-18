@@ -14,7 +14,7 @@ feature "user creates a spot" do
   scenario "logged out users can't create spots" do
     visit root_path
     page.should_not have_content("Add a Spot!")
-    visit new_post_path
+    visit new_spot_path
     should_be_denied_access
   end
 
@@ -32,7 +32,7 @@ feature "user creates a spot" do
     fill_in "The Ugly", with: "If John is working, tell him you want extra cheese. He probably won't charge you."
     click_on "Add this Spot!"
     page.should have_notice("#{Spot.name} has been added.")
-    current_path.should == user_posts_path(me)
+    current_path.should == user_spot_path(me)
     page.should have_link "Gabby's Burgers"
     click_on "Gabby's Burgers"
     page.should have_css("h1", text: "Gabbie's Burgers")
@@ -48,11 +48,11 @@ feature "user creates a spot" do
   scenario "sad path" do
     me = Fabricate(:user, name: "Bob")
     signin_as me
-    click_on "Share Some Knowledge"
+    click_on "Add a Spot!"
     fill_in "Title", with: ""
     fill_in "Body", with: ""
     click_on "Publish Knowledge"
-    page.should have_alert("Your knowledge could not be published.  Please correct the errors below.")
+    page.should have_alert("We couldn't add your spot!. Please correct the errors below.")
     page.should have_error("can't be blank", on: "Title")
     page.should have_error("can't be blank", on: "Body")
   end
