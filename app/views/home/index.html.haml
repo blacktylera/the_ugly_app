@@ -9,3 +9,9 @@
   %body
     %div(class="index_page")
       %p everything you really need to know about your favorite local spots.
+      %p
+        - @spots.each do |spot|
+          = spot.name
+          = spot.img_url
+          = spot.address
+          = spot.phone

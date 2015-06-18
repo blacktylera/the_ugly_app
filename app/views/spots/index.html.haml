@@ -1,0 +1,8 @@
+%p
+  - @spots.each do |spot|
+    = spot.name
+    = spot.img_url
+    = spot.address
+    = spot.phone, user_spot_path(spot.author, spot)
+
+= link_to "All the Uglies", root_path
