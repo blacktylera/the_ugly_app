@@ -1,24 +1,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Bad+Script|Ceviche+One);
 
-h1 {
-	background-color: green;
-}
 
 .navbar {
-	height: 75px;
-  padding-bottom: 100px;
+	height: 50px;
+  padding-bottom: 0px;
 	background-color: #3A3A3A;
 	text-align: center
+}
+
+.main_h1 {
+	margin-top: 100px;
+	font-family: 'Bad Script';
+	text-align: center;
+	font-size: 12em;
+}
+
+.main_h2 {
+	margin-top: 75px;
+	font-family: 'Bad Script';
+	text-align: center;
+	font-size: 2em;
 }
 
 .navbar-brand {
 	text-align: center;
 }
 
-.index_page {
-	margin-top: 100px;
-}
 
 ul.nav.navbar-nav li a {
   margin-right: 10px;
@@ -34,4 +43,8 @@ ul.nav.navbar-nav li {
 
 body {
   background-color: #F1F1F1
+}
+
+img {
+	scale: 50%;
 }

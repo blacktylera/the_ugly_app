@@ -1,0 +1,27 @@
+%d#filterrific_results
+  %div
+    / = page_entries_info spots
+  %table
+    %tr
+      %th Name
+      %th Address
+      %th Phone
+      %th Category
+      %th Registered at
+    - spots.each do |spot|
+      %tr
+        %td= spot.name
+        %td= spot.address
+        %td= spot.phone
+        %td= spot.category
+        %td= spot.created_at
+/ = will_paginate spots
+
+
+
+
+/ t.string   "name"
+/     t.string   "img_url"
+/     t.text     "address"
+/     t.string   "phone"
+/     t.string   "category"

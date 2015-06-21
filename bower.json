@@ -1,0 +1,19 @@
+{
+  "name": "the_ugly_app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/blacktylera/the_ugly_app",
+  "authors": [
+    "Tyler Black <blacktylera@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chosen": "~1.4.2"
+  }
+}

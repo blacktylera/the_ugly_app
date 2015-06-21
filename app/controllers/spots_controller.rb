@@ -3,9 +3,7 @@ class SpotsController < ApplicationController
   before_filter :load_user, except: [:new, :create]
   before_action :require_login, except: [:index, :show]
 
-  def index
-    @spots = @user.spots.all
-  end
+
 
   def create
     @spot.author = current_user

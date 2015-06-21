@@ -1,17 +1,46 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title The Ugly
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body
-    %div(class="index_page")
-      %p everything you really need to know about your favorite local spots.
-      %p
-        - @spots.each do |spot|
-          = spot.name
-          = spot.img_url
-          = spot.address
-          = spot.phone
+  %body(id="home_page")
+    %div
+      %h1(class="main_h1") The Ugly
+      %h2(class="main_h2") everything you really need to know about your favorite local spots.
+    %div(class="container")
+      %div(class="row")
+        %div(div class="col-md-12")
+          %h1 Spots
+          = form_for_filterrific @filterrific do |f|
+            .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
+              %label Search
+              = f.text_field :search_query, :class => "filterrific-periodically-observed form-control"
+
+            //%div
+            // Sorted by
+            //  = f.select(:sorted_by, @filterrific.select_options[:sorted_by])
+
+            %div
+              = link_to "Reset filters", reset_filterrific_url
+
+              = render_filterrific_spinner
+            %div
+              = render(partial: 'home/list',locals: { spots: @spots })
+
+
+
+
+
+
+
+
+
+      / %p everything you really need to know about your favorite local spots.
+      / %h2
+      /   - @spots.each do |spot|
+      /     %img(src="#{spot.img_url}")
+      /     = spot.name
+      /     = spot.category
