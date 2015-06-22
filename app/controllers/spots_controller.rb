@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   before_filter :load_spot
-  before_filter :load_user, except: [:new, :create]
+  # before_filter :load_user, except: [:new, :create]
   before_action :require_login, except: [:index, :show]
 
 
@@ -29,9 +29,9 @@ class SpotsController < ApplicationController
     end
   end
 
-  def load_user
-    @user = User.find(params[:user_id])
-  end
+  # def load_user
+  #   @user = User.find(params[:user_id])
+  # end
 
   def spot_params
     params.require(:spot).permit(:author, :name, :img_url, :address, :phone, :category, :the_good, :the_bad, :the_ugly)

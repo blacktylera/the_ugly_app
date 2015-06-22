@@ -7,8 +7,8 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body(id="home_page")
-    %div
-      %h1(class="main_h1") The Ugly
+    %div(class="subheader_div")
+      %h1(class="main_h1") The Ugly.
       %h2(class="main_h2") everything you really need to know about your favorite local spots.
     %div(class="container")
       %div(class="row")
@@ -18,13 +18,15 @@
             .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
               %label Search
               = f.text_field :search_query, :class => "filterrific-periodically-observed form-control"
+              / %label Category
+              / = f.select( :with_category, @filterrific.select_options[:with_category], { include_blank: '- Any -' } )
 
             //%div
             // Sorted by
             //  = f.select(:sorted_by, @filterrific.select_options[:sorted_by])
 
             %div
-              = link_to "Reset filters", reset_filterrific_url
+              / = link_to "Reset filters", reset_filterrific_url
 
               = render_filterrific_spinner
             %div

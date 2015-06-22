@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Bad+Script|Ceviche+One);
-
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900,100italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
 .navbar {
 	height: 50px;
@@ -10,18 +10,37 @@
 	text-align: center
 }
 
+.nav.navbar.navbar-inverse.navbar-fixed-top {
+	margin: 0;
+}
+
+.subheader_div {
+	height: 600px;
+	background-color: #FFFF66;
+
+}
+
 .main_h1 {
-	margin-top: 100px;
-	font-family: 'Bad Script';
+	margin-top: -20px;
+	margin-bottom: 0px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
 	text-align: center;
 	font-size: 12em;
+	padding-top: 175px;
+	padding-bottom: 20px;
 }
 
 .main_h2 {
-	margin-top: 75px;
-	font-family: 'Bad Script';
+	margin-top: 10px;
+	margin-bottom: 50px;
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: 100;
 	text-align: center;
 	font-size: 2em;
+	padding-top: 20px;
+	// padding-bottom: 60px;
 }
 
 .navbar-brand {
@@ -45,6 +64,76 @@ body {
   background-color: #F1F1F1
 }
 
-img {
-	scale: 50%;
+tr {
+	text-align: center;
+	font-family: 'Open Sans Condensed';
+	font-weight: 700;
+	font-size: 2em;
 }
+
+th {
+	text-align: center;
+	font-family: 'Open Sans Condensed';
+	font-weight: 100;
+	font-size: 1em;
+}
+
+a {
+	text-decoration: none;
+	color: #3A3A3A;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #FFFF66;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+// .spot_info {
+// 	text-align: left;
+// 	font-family: 'Open Sans Condensed';
+// 	font-weight: 100;
+// 	font-size: 5em;
+// }
+
+
+.spot_page_head {
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	text-align: center;
+	font-size: 5em;
+	margin-bottom: 75px;
+}
+
+.spot_info {
+	text-align: left;
+	font-family: 'Open Sans Condensed';
+	font-weight: 300;
+	font-size: 3em;
+}
+
+
+.col-md-5 img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+}
+// .user_fa {
+// 	padding-top: 109px;
+// }
+
+// .spot_info {
+// 	padding-left: 125px;
+// }
+
+// .spot_page_main {
+// 	background-color: #FFFF66;
+// }

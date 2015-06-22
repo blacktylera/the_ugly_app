@@ -1,4 +1,4 @@
 - js = escape_javascript(
-- render(partial: 'spots/list', locals: { students: @spots })
+- render(partial: 'spots/list', locals: { spots: @spots })
 - )
 $("#filterrific_results").html("#{js}");

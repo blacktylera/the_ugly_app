@@ -1,0 +1,22 @@
+%div(class="container spot_page_main")
+	%div(class="row")
+		%div(div class="col-md-12")
+			%h1(class="spot_page_head")=@spot.name
+	%div(class="row ")
+		%div(div class="col-md-5")
+			%img(src="#{@spot.img_url}")
+		%div(div class="col-md-4 spot_info")
+			%p=fa_icon "building"
+			%a{:href => "https://www.google.com/#q=#{@spot.address}", :target => "_blank"}=@spot.address
+			%p=fa_icon "phone-square"
+			%p=@spot.phone
+		%div(div class="col-md-3 spot_info")
+			%p=fa_icon "bookmark-o"
+			%p=@spot.category
+			%p(class="user_fa")=fa_icon "user"
+			%p=@spot.author.name
+			/ %a{:href => "https://www.google.com/#q=#{@spot.name}+nashville", :target => "_blank"}=fa_icon "google"
+	%div(class="row")
+
+
+
