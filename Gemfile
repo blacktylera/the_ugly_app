@@ -49,4 +49,11 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'email_spec'
+
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+end
+
+
 end
