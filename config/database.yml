@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: the_ugly_app_production
-  username: the_ugly_app
-  url: <%= ENV['DATABASE_URL']
+  url: <%= ENV['DATABASE_URL'] %>
