@@ -16,7 +16,21 @@
 			%p(class="user_fa")=fa_icon "user"
 			%p=@spot.author.name
 			/ %a{:href => "https://www.google.com/#q=#{@spot.name}+nashville", :target => "_blank"}=fa_icon "google"
-	%div(class="row")
+	%div(class="row good_bad_ug")
+		%div(div class="col-md-4")
+			%h1 The Good
+		%div(div class="col-md-4")
+			%h1 The Bad
+		%div(div class="col-md-4")
+			%h1 The Ugly
+	%div(class="row good_bad_ug_com")
+		%div(div class="col-md-4")
+			%p=@spot.the_good
+		%div(div class="col-md-4")
+			%p=@spot.the_bad
+		%div(div class="col-md-4")
+			%p=@spot.the_ugly
+
 
 
 
