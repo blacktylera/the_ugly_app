@@ -49,6 +49,7 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'email_spec'
+end
 
 group :production do
   gem 'puma'
@@ -56,4 +57,3 @@ group :production do
 end
 
 
-end
