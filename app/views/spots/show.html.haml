@@ -25,11 +25,17 @@
 			%h1 The Ugly
 	%div(class="row good_bad_ug_com")
 		%div(div class="col-md-4")
-			%p=@spot.the_good
+			- @spot.reviews.where(kind:"The Good").each do |review|
+				%p= review.content
 		%div(div class="col-md-4")
-			%p=@spot.the_bad
+			- @spot.reviews.where(kind:"The Bad").each do |review|
+				%p= review.content
 		%div(div class="col-md-4")
-			%p=@spot.the_ugly
+			- @spot.reviews.where(kind:"The Ugly").each do |review|
+				%p= review.content
+	%div(class="row review")
+		%div(div class="col-md-12")
+			%p=link_to "add a new review", new_spot_path
 
 
 

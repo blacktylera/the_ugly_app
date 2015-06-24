@@ -16,7 +16,7 @@
               %span(class='icon-bar')
               %span(class='icon-bar')
               %span(class='icon-bar')
-            %a(class='navbar-brand') 
+            %a(class='navbar-brand')
 
         %div(class='collapse navbar-collapse navbar-right' id='navbar-collapse-1')
           %ul(class='nav navbar-nav')
@@ -26,6 +26,7 @@
               - unless controller_name == 'user_sessions'
                 %li= link_to "Sign In", new_user_session_path
             - else
+              %li= link_to "Phone Home", root_path
               %li= link_to "Add a Spot!", new_spot_path
               %li= link_to "Sign Out", user_session_path, method: :delete
     %p.notice= notice

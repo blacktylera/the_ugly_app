@@ -1,7 +1,10 @@
 class Spot < ActiveRecord::Base
 	belongs_to :author, class_name: "User"
 
-	validates :author, :name, :img_url, :address, :phone, :category, :the_good, :the_bad, :the_ugly, presence: true
+	has_many :reviews
+	accepts_nested_attributes_for :reviews
+
+	validates :author, :name, :img_url, :address, :phone, :category, presence: true
 
 	filterrific(
 	  default_filter_params: { sorted_by: 'created_at_desc' },

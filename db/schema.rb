@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622202902) do
+ActiveRecord::Schema.define(version: 20150623215235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "reviews", force: :cascade do |t|
     t.string   "kind"
-    t.text     "review"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "author_id"
@@ -34,9 +34,6 @@ ActiveRecord::Schema.define(version: 20150622202902) do
     t.text     "address"
     t.string   "phone"
     t.string   "category"
-    t.string   "the_good"
-    t.string   "the_bad"
-    t.string   "the_ugly"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "author_id"
@@ -55,5 +52,6 @@ ActiveRecord::Schema.define(version: 20150622202902) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "reviews", "spots", column: "author_id"
   add_foreign_key "spots", "users", column: "author_id"
 end

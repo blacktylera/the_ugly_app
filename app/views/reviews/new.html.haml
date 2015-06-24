@@ -1,0 +1,6 @@
+= simple_form_for @spot do |f|
+  = f.simple_fields_for :reviews do |g|
+    %p="#{g.object.kind}"
+    =g.input :content
+    =g.input :kind, as: :hidden
+  = f.button :submit, "Add your spot!"

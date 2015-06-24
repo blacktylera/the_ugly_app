@@ -1,18 +1,32 @@
 class SpotsController < ApplicationController
-  before_filter :load_spot
-  # before_filter :load_user, except: [:new, :create]
+  before_filter :load_user, except: [:new, :create]
   before_action :require_login, except: [:index, :show]
 
+  def new
+    @spot = Spot.new
+    @thegood = @spot.reviews.build(kind: "The Good")
+    @thebad= @spot.reviews.build(kind: "The Bad")
+    @theugly= @spot.reviews.build(kind: "The Ugly")
+  end
 
 
   def create
+    @spot = Spot.new
+    @spot.assign_attributes(spot_params)
     @spot.author = current_user
+    @spot.reviews.each do |review|
+      review.author=current_user
+    end
     if @spot.save
       redirect_to root_path, notice: "You have added #{Spot.name}!"
     else
       flash.alert = "We couldn't add your spot!. Please correct the errors below."
       render :new
     end
+  end
+
+  def show
+    @spot = Spot.find(params[:id])
   end
 
   private
@@ -29,11 +43,11 @@ class SpotsController < ApplicationController
     end
   end
 
-  # def load_user
-  #   @user = User.find(params[:user_id])
-  # end
+  def load_user
+    @user = current_user
+  end
 
   def spot_params
-    params.require(:spot).permit(:author, :name, :img_url, :address, :phone, :category, :the_good, :the_bad, :the_ugly)
+    params.require(:spot).permit(:author, :name, :img_url, :address, :phone, :category, reviews_attributes: [:content, :kind])
   end
 end

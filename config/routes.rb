@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :spots, except: [:index]
+  resources :reviews
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :destroy] do
     resources :spots, only: [:index, :show]

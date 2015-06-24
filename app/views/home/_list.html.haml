@@ -7,7 +7,8 @@
       %th Category
     - @spots.each do |spot|
       %tr
-        %td=link_to spot.name, spot_path(spot)
+        / %h2= spot.id
+        %td=link_to spot.name, spot_path(spot.id)
         %td= spot.category
 / = will_paginate spots
 
