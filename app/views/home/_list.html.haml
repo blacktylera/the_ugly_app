@@ -1,6 +1,5 @@
 %d#filterrific_results
   %div
-    / = page_entries_info spots
   %table(class="table table-hover")
     %tr
       %th Name
@@ -10,13 +9,4 @@
         / %h2= spot.id
         %td=link_to spot.name, spot_path(spot.id)
         %td= spot.category
-/ = will_paginate spots
-
-
-
-
-/ t.string   "name"
-/     t.string   "img_url"
-/     t.text     "address"
-/     t.string   "phone"
-/     t.string   "category"
+= will_paginate spots

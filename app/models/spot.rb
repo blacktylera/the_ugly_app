@@ -6,6 +6,8 @@ class Spot < ActiveRecord::Base
 
 	validates :author, :name, :img_url, :address, :phone, :category, presence: true
 
+	self.per_page = 10
+
 	filterrific(
 	  default_filter_params: { sorted_by: 'created_at_desc' },
 	  available_filters: [

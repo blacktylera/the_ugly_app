@@ -27,6 +27,10 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @thegood = @spot.reviews.build(kind: "The Good")
+    @thebad= @spot.reviews.build(kind: "The Bad")
+    @theugly= @spot.reviews.build(kind: "The Ugly")
+    @reviews = [@thegood, @thebad, @theugly]
   end
 
   private
