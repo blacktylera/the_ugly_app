@@ -5,12 +5,16 @@
       %th Name
       %th Category
       %th Added By
+      %th
     - @spots.each do |spot|
       %tr
-        / %h2= spot.id
         %td=link_to spot.name, spot_path(spot.id)
         %td= spot.category
         %td= spot.author.name
+        - if @user && spot.author_id == @user.id
+          %td(type="submit" class="btn btn-primary delete")=link_to "X", spot_path(spot), method: :delete
+        - else
+          %td
   %div(class="container")
     %div(class="row")
       %div(div class="col-md-2")

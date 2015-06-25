@@ -17,6 +17,7 @@ class SpotsController < ApplicationController
     @spot.reviews.each do |review|
       review.author=current_user
     end
+    # binding.pry
     if @spot.save
       redirect_to root_path, notice: "You have added #{Spot.name}!"
     else
@@ -31,6 +32,12 @@ class SpotsController < ApplicationController
     @thebad= @spot.reviews.build(kind: "The Bad")
     @theugly= @spot.reviews.build(kind: "The Ugly")
     @reviews = [@thegood, @thebad, @theugly]
+  end
+
+  def destroy
+    @spot = Spot.find(params[:id])
+    @spot.destroy
+    redirect_to root_path
   end
 
   private

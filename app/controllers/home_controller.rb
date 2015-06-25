@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 		  params[:filterrific]
 		) or return
 		@spots = @filterrific.find.page(params[:page])
-
+		@user = current_user if current_user
 		respond_to do |format|
 		  format.html
 		  format.js

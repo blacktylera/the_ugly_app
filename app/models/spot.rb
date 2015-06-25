@@ -1,7 +1,7 @@
 class Spot < ActiveRecord::Base
 	belongs_to :author, class_name: "User"
 
-	has_many :reviews
+	has_many :reviews, dependent: :destroy
 	accepts_nested_attributes_for :reviews
 
 	validates :author, :name, :img_url, :address, :phone, :category, presence: true
