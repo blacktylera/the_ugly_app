@@ -46,6 +46,9 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-glyphicons (0.0.1)
+      railties (>= 3.0)
+      sass (>= 3.2)
     bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -361,6 +364,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable
+  bootstrap-glyphicons
   bootstrap-sass
   byebug
   capybara

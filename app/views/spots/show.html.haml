@@ -27,13 +27,31 @@
     %div(div class="col-md-4")
       - @spot.reviews.where(kind:"The Good").each do |review|
         %p= review.content
+        = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
+          %span(class="glyphicon glyphicon-chevron-up")
+          =review.get_upvotes.size
+        = link_to dislike_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
+          %span(class="glyphicon glyphicon-chevron-down")
+          =review.get_downvotes.size
     %div(div class="col-md-4")
       - @spot.reviews.where(kind:"The Bad").each do |review|
         %p= review.content
+        = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
+          %span(class="glyphicon glyphicon-chevron-up")
+          =review.get_upvotes.size
+        = link_to dislike_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
+          %span(class="glyphicon glyphicon-chevron-down")
+          =review.get_downvotes.size
     %div(div class="col-md-4")
       - @spot.reviews.where(kind:"The Ugly").each do |review|
         %p= review.content
-        = link_to like_review_path(@review), method: :put
+        = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
+          %span(class="glyphicon glyphicon-chevron-up")
+          =review.get_upvotes.size
+        = link_to dislike_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
+          %span(class="glyphicon glyphicon-chevron-down")
+          =review.get_downvotes.size
+
   %div(class="row review")
     .col-md-12
     - if logged_in?
