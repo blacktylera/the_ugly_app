@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
       review.save
     end
     if @spot.save
-      redirect_to root_path, notice: "You have added your review!"
+      redirect_to :back, notice: "You have added your review!"
     else
       flash.alert = "We couldn't add your review!. Please correct the errors below."
       render :new

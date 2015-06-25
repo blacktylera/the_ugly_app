@@ -130,7 +130,7 @@ a:active {
 
 a.btn.btn-default.btn-sm {
 	padding: 3px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	background-color: #3A3A3A;
 	color: #FFFF66;
 }
@@ -141,6 +141,34 @@ a.btn.btn-default.btn-sm {
 
 .col-md-4 {
 	word-wrap: break-word;
+}
+
+////////// Add A Spot
+
+label.text.optional {
+	display: none
+}
+
+#spot_reviews_attributes_0_content.text.optional {
+	border: 3px solid #3A3A3A;
+	width: 500px;
+	resize: none;
+}
+
+#spot_reviews_attributes_1_content.text.optional {
+	border: 3px solid #3A3A3A;
+	width: 500px;
+	resize: none;
+}
+
+#spot_reviews_attributes_2_content.text.optional {
+	border: 3px solid #3A3A3A;
+	width: 500px;
+	resize: none;
+}
+
+.notice {
+	z-index: 999;
 }
 // .user_fa {
 // 	padding-top: 109px;

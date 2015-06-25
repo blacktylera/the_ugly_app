@@ -4,4 +4,6 @@ class Review < ActiveRecord::Base
 	belongs_to :spot, class_name: "Spot"
 
 	validates :author, presence: true
+
+	self.per_page = 1
 end

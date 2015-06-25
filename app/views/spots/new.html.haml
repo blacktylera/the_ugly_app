@@ -3,7 +3,7 @@
   = f.input :img_url
   = f.input :address
   = f.input :phone
-  = f.select :category, ["Bar/Restaurant", "Entertainment", "Other"]
+  = f.select :category, ["Bar/Restaurant", "Entertainment", "Other"], :class => "dropdown btn btn-default dropdown-toggle"
   = f.simple_fields_for :reviews do |g|
     %p="#{g.object.kind}"
     =g.input :content

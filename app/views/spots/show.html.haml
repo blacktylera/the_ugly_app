@@ -35,7 +35,7 @@
           =review.get_downvotes.size
     %div(div class="col-md-4")
       - @spot.reviews.where(kind:"The Bad").each do |review|
-        %p= review.content
+        %p= review.content if review.content != nil
         = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
           %span(class="glyphicon glyphicon-chevron-up")
           =review.get_upvotes.size
@@ -44,7 +44,7 @@
           =review.get_downvotes.size
     %div(div class="col-md-4")
       - @spot.reviews.where(kind:"The Ugly").each do |review|
-        %p= review.content
+        %p= review.content if review.content != nil
         = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
           %span(class="glyphicon glyphicon-chevron-up")
           =review.get_upvotes.size
@@ -62,7 +62,6 @@
             = x.hidden_field :kind
             = x.text_area :content
         = submit_tag
-
 
 
 
