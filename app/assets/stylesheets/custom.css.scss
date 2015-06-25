@@ -128,8 +128,19 @@ a:active {
 	margin-top: 10%;
 }
 
+a.btn.btn-default.btn-sm {
+	padding: 3px;
+	margin-bottom: 10px;
+	background-color: #3A3A3A;
+	color: #FFFF66;
+}
+
 .good_bad_ug {
 	text-align: center;
+}
+
+.col-md-4 {
+	word-wrap: break-word;
 }
 // .user_fa {
 // 	padding-top: 109px;
