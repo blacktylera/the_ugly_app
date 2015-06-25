@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :spots, except: [:index] do
-    resources :reviews
+    resources :reviews do
+      member do
+        put "like",    to: "reviews#upvote"
+        put "dislike", to: "reviews#downvote"
+      end
+    end
   end
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :destroy] do

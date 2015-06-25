@@ -33,6 +33,7 @@
     %div(div class="col-md-4")
       - @spot.reviews.where(kind:"The Ugly").each do |review|
         %p= review.content
+        = link_to like_review_path(@review), method: :put
   %div(class="row review")
     .col-md-12
     - if logged_in?

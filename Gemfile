@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 #ruby-gemset=the_ugly_app
 
+gem 'acts_as_votable'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.1.0'
