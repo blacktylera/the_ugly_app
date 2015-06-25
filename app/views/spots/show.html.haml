@@ -24,7 +24,7 @@
     %div(div class="col-md-4")
       %h1 The Ugly
   %div(class="row good_bad_ug_com")
-    %div(div class="col-md-4")
+    %div(div class="col-md-4 review")
       - @spot.reviews.where(kind:"The Good").each do |review|
         %p= review.content
         = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
@@ -33,7 +33,7 @@
         = link_to dislike_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
           %span(class="glyphicon glyphicon-chevron-down")
           =review.get_downvotes.size
-    %div(div class="col-md-4")
+    %div(div class="col-md-4 review")
       - @spot.reviews.where(kind:"The Bad").each do |review|
         %p= review.content if review.content != nil
         = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
@@ -42,7 +42,7 @@
         = link_to dislike_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
           %span(class="glyphicon glyphicon-chevron-down")
           =review.get_downvotes.size
-    %div(div class="col-md-4")
+    %div(div class="col-md-4 review")
       - @spot.reviews.where(kind:"The Ugly").each do |review|
         %p= review.content if review.content != nil
         = link_to like_spot_review_path(review.spot_id, review.id), method: :put, class: "btn btn-default btn-sm" do
@@ -53,15 +53,19 @@
           =review.get_downvotes.size
 
 %div(class="row_review")
-  .col-md-12
-  - if logged_in?
-    %h2=link_to "Add review"
-    = form_tag spot_reviews_path(@spot), method: :post do
-      - @reviews.each do |review|
-        = fields_for "reviews[]", review do |x|
-          = x.hidden_field :kind
-          = x.text_area :content
-      = submit_tag
+  %div(class="container")
+    %div(class="row")
+      .col-md-12
+      - if logged_in?
+        %h2(class="add_review_header") Go Ahead, Gimme the ugly
+        = form_tag spot_reviews_path(@spot), method: :post do
+          - @reviews.each do |review|
+            = fields_for "reviews[]", review do |x|
+              = x.hidden_field :kind
+              = x.text_area :content
+          = submit_tag
+
+
 
 
 
