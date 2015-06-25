@@ -73,6 +73,10 @@ body {
 	margin-bottom: 5%
 }
 
+.table th, .table td {
+     border-top: none !important;
+ }
+
 tr {
 	text-align: left;
 	font-family: 'Open Sans Condensed';
@@ -88,20 +92,22 @@ th {
 	margin: 0px
 }
 
+
 .table th {
 	padding-right: 30%
 }
 
 .btn.btn-primary.delete {
-	margin-top: 10px;
+	margin-top: 13px;
 	margin-bottom: 0px;
-	padding-top:0px;
+	padding-top:5px;
 	height: 40px;
 	width: 40px;
 	border: none;
 	font-family: 'Open Sans Condensed';
 	font-weight: 700;
-	font-size: 1em;
+	font-size: .75em;
+	background-color: #FFFF66;
 }
 
 a {
