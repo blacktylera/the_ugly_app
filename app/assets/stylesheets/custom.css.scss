@@ -65,18 +65,31 @@ body {
   background-color: #F1F1F1
 }
 
-tr {
+.spots_header {
 	text-align: center;
+	font-family: 'Open Sans Condensed';
+	font-weight: 700;
+	font-size: 3em;
+	margin-bottom: 5%
+}
+
+tr {
+	text-align: left;
 	font-family: 'Open Sans Condensed';
 	font-weight: 700;
 	font-size: 2em;
 }
 
 th {
-	text-align: center;
+	text-align: left;
 	font-family: 'Open Sans Condensed';
 	font-weight: 100;
 	font-size: 1em;
+	margin: 0px
+}
+
+.table th {
+	padding-right: 30%
 }
 
 a {
@@ -170,9 +183,42 @@ label.text.optional {
 .notice {
 	z-index: 999;
 }
-// .user_fa {
-// 	padding-top: 109px;
-// }
+
+
+//// Pagination
+.pagination {
+  background: #3A3A3A;
+  cursor: default;
+  /* self-clearing method: */ }
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.2em 0.6em;
+    display: block;
+    float: left;
+    margin-right: 0px; }
+  .pagination .disabled {
+    color: #FFFF66;
+    border: 1px solid #FFFF66; }
+  .pagination a {
+    text-decoration: none;
+    color: #FFFF66;
+    border: 1px solid #FFFF66; }
+    .pagination a:hover, .pagination a:focus {
+      color: #FFFF66;
+      border-color: #FFFF66; }
+  .pagination {
+  	 margin-left: 7%;
+  }
+
+  img {
+  	max-width: 250px;
+  	max-height: 250px;
+  }
+
+  .form-group.chardin_box label {
+  	display: none;
+  }
+
+
 
 // .spot_info {
 // 	padding-left: 125px;

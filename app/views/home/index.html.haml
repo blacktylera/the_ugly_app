@@ -12,8 +12,9 @@
       %h2(class="main_h2") everything you really need to know about your favorite local spots.
     %div(class="container")
       %div(class="row")
-        %div(div class="col-md-12")
-          %h1 Spots
+        %div(div class="col-md-1")
+        %div(div class="col-md-10")
+          %h1(class = "spots_header") Spots
           = form_for_filterrific @filterrific do |f|
             .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search by first name, last name, or email.' }
               %label Search
@@ -31,6 +32,9 @@
               = render_filterrific_spinner
             %div
               = render(partial: 'home/list',locals: { spots: @spots })
+        %div(div class="col-md-1")
+
+
 
 
 

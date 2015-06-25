@@ -6,4 +6,6 @@ class Review < ActiveRecord::Base
 	validates :author, presence: true
 
 	self.per_page = 1
+
+	default_scope -> {order(:cached_weighted_average => :desc)}
 end
