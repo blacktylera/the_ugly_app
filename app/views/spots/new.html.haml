@@ -1,15 +1,26 @@
-= simple_form_for @spot do |f|
-  = f.input :name
-  = f.input :img_url
-  = f.input :address
-  = f.input :phone
-  = f.select :category, ["Bar/Restaurant", "Entertainment", "Other"], :class => "dropdown btn btn-default dropdown-toggle"
-  = f.simple_fields_for :reviews do |g|
-    %p="#{g.object.kind}"
-    =g.input :content
-    =g.input :kind, as: :hidden
-  = f.button :submit, "Add your spot!"
+%div(class="spot_page_add_new")
+  %div(class="container spot_page_container")
+    %div(class="row")
+      %div(div class="col-md-4")
+      %div(div class="col-md-4")
+        = simple_form_for @spot do |f|
+          %h3 Name
+          = f.input :name
+          %h3 Image URL
+          = f.input :img_url
+          %h3 Address
+          = f.input :address
+          %h3 Phone Number
+          = f.input :phone
+          %h3 Category
+          = f.select :category, ["Bar/Restaurant", "Entertainment", "Other"],input_html: {:class => "btn btn-primary dropdown-toggle"}
+          = f.simple_fields_for :reviews do |g|
+            %p="#{g.object.kind}"
+            =g.input :content
+            =g.input :kind, as: :hidden
+          = f.button :submit, "Add your spot!"
+      %div(div class="col-md-4")
 
 
 
-/ accepts_nested_attributes_for :reviews
+      / accepts_nested_attributes_for :reviews
