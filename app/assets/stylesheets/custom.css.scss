@@ -283,8 +283,93 @@ label.text.optional {
     margin-bottom: 15px;
 }
 
+//// Sign Up
 
+.spot_page_signup {
+	background-color: #FFFF66
+}
 
+.sign_up_page {
+	background-color: #FFFF66
+}
+
+label.string.required {
+	display: none;
+}
+
+label.email.required {
+	display: none;
+}
+
+label.password.required {
+	display: none;
+}
+
+label.string.required {
+	display: none;
+}
+
+.sign_up_label {
+	text-align: center;
+	font-family: 'Open Sans Condensed';
+	font-weight: 700;
+	font-size: 3em;
+	text-color: #FFFF66
+}
+
+.spot_page_signup h3 {
+	font-family: 'Open Sans Condensed';
+	font-weight: 700;
+	font-size: 2em;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.string.required {
+	text-align:center;
+}
+
+.email.required {
+	text-align:center;
+}
+
+.password.required {
+	text-align:center;
+}
+
+#user_name {
+	border: 3px solid #3A3A3A;
+	border-radius: 5px;
+}
+
+#user_email {
+	border: 3px solid #3A3A3A;
+	border-radius: 5px;
+}
+
+#user_password {
+	border: 3px solid #3A3A3A;
+	border-radius: 5px;
+}
+
+#user_password_confirmation {
+	border: 3px solid #3A3A3A;
+	border-radius: 5px;
+}
+
+input.btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	background-color:#3A3A3A;
+	color: #FFFF66
+}
+
+.sign_up_page {
+	margin-top: -13px;
+}
 // .spot_info {
 // 	padding-left: 125px;
 // }

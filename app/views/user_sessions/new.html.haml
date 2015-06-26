@@ -1,6 +1,8 @@
-%h1 Sign In
-
-= simple_form_for @user, url: user_session_path do |f|
-  = f.input :email
-  = f.input :password
-  = f.button :submit, "Sign In"
+%div(class="container spot_page_signin")
+  %div(class="row")
+    %div(div class="col-md-12")
+		%h1 Sign In(class="sign_in")
+		= simple_form_for @user, url: user_session_path do |f|
+		  = f.input :email
+		  = f.input :password
+		  = f.button :submit, "Sign In"

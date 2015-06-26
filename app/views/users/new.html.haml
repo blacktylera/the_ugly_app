@@ -1,8 +1,18 @@
-%h1 Sign Up
+%div(class= "sign_up_page")
+  %div(class="container spot_page_signup")
+    %div(class="row")
+      %div(div class="col-md-4")
+      %div(div class="col-md-4 sign_up_content")
+        %h1(class="sign_up_label") Hey, we'd love to have you!
 
-= simple_form_for @user do |f|
-  = f.input :name
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.button :submit, "Sign Up"
+        = simple_form_for @user do |f|
+          %h3 Username
+          = f.input :name
+          %h3 Email Address
+          = f.input :email
+          %h3 Password
+          = f.input :password
+          %h3 Confirm Passowrd
+          = f.input :password_confirmation
+          = f.button :submit, "Sign Up"
+      %div(div class="col-md-4")
