@@ -57,7 +57,7 @@
     %div(class="row")
       .col-md-12
       - if logged_in?
-        %h2(class="add_review_header") Go Ahead, Gimme the ugly
+        %h2(class="add_review_header") Go Ahead, Gimme the good, the bad, and the ugly.
         = form_tag spot_reviews_path(@spot), method: :post do
           - @reviews.each do |review|
             = fields_for "reviews[]", review do |x|
